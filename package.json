@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bengler/logdog.git"
+    "url": "git+https://github.com/skogsmaskin/logdog.git"
   },
   "keywords": [
     "log",
@@ -21,9 +21,9 @@
   "author": "Per-Kristian Nordnes",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bengler/logdog/issues"
+    "url": "https://github.com/skogsmaskin/logdog/issues"
   },
-  "homepage": "https://github.com/bengler/logdog#readme",
+  "homepage": "https://github.com/skogsmaskin/logdog#readme",
   "dependencies": {
     "debug": "^2.2.0",
     "slack-notify": "^0.1.4"
