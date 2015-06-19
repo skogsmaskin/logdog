@@ -45,9 +45,9 @@ module.exports = (function () {
         slack.send({
           channel: slackOverrideOptions.channel || options.slack.channel,
           username: slackOverrideOptions.username || options.slack.username || 'LogDog',
-          icon_emoji: slackOverrideOptions.emoji || options.slack.emoji || ':dog:',
+          icon_emoji: slackOverrideOptions.emoji || options.slack.emoji || ':dog:', // eslint-disable-line camelcase
           text: text,
-          link_names: 1
+          link_names: 1 // eslint-disable-line camelcase
         });
       }
 

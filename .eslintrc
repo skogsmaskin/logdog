@@ -1,0 +1,13 @@
+{
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "strict": 0,
+    "semi": 0,
+    "eqeqeq": 0,
+    "quotes": 0,
+    "no-underscore-dangle": 0,
+    "no-process-exit": 0
+  }
+}

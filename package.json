@@ -4,8 +4,12 @@
   "description": "A tool for logging and debugging important events in your app that a developer should be able to easily be notified about and look into.",
   "main": "logdog.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bengler/logdog.git"
@@ -23,5 +27,9 @@
   "dependencies": {
     "debug": "^2.2.0",
     "slack-notify": "^0.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^0.23.0",
+    "pre-commit": "^1.0.10"
   }
 }
