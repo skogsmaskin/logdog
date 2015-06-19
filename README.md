@@ -11,7 +11,7 @@ It's a call to actions for further debugging / log file inspection by a develope
 
 ## Usage
 
-``npm install logdog``
+``npm install logdog`
 
 Logdog is first initialized in your app by requiring it and passing configuration options for it:
 
@@ -63,7 +63,7 @@ If we want, we may put it on Slack too:
 
       * `url`: Required. I.e. 'https://hooks.slack.com/services/XXX/YYY/abc'
       * `channel`: Required. I.e. '#appNotifications'
-      * `username`: Optinal. Defaults to 'LogDog'.
+      * `username`: Optional. Defaults to 'LogDog'.
       * `emoji`: Optional. An emoticon associated with the message. Defaults to ':dog:',
       * `notify`: Optional. Slack username(s) to notify. I.e. '@jon' or ['@jon', '@samwell'].
 
