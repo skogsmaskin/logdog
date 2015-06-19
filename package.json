@@ -1,0 +1,27 @@
+{
+  "name": "logdog",
+  "version": "0.0.0",
+  "description": "A tool for logging and debugging important events in your app that a developer should be able to easily be notified about and look into.",
+  "main": "logdog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengler/logdog.git"
+  },
+  "keywords": [
+    "log",
+    "debug"
+  ],
+  "author": "Per-Kristian Nordnes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengler/logdog/issues"
+  },
+  "homepage": "https://github.com/bengler/logdog#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "slack-notify": "^0.1.4"
+  }
+}
