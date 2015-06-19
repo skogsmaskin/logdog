@@ -82,8 +82,10 @@ If we want, we may put it on Slack too:
 ```
 
 #### Simple log to std.out
+```
   var logDog = require('logdog')({bindToStdOut: true});
   logDog('myapp.myfeature').bark("Did something of importance!");
+```
 
 #### Log and send to Slack
 
