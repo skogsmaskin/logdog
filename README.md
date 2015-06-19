@@ -32,7 +32,7 @@ Another place in the code (call without any options):
 var logDog = require('logdog')();
 
 ```
-Logdog is not configured with options from the first require statement.
+Logdog is now configured with options from the first initial require statement.
 
 
 ```
