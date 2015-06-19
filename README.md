@@ -2,6 +2,10 @@
 
 A simple module for logging and alerting about spesific critical events inside your app for further inspection by a developer.
 
+Writes log messages to std.out or std.err.
+
+Supports notifying a Slack channel (fully optional).
+
 ## Disclaimer
 
 Logdog is not meant to be your application logger or debugger!
@@ -16,18 +20,13 @@ It's a call to actions for further debugging / log file inspection by a develope
 Logdog is first initialized in your app by requiring it and passing configuration options for it:
 
 ```
-  var logDog = require('logdog')({
-    slack: {
-      url: 'https://hooks.slack.com/services/XXX/YYY/abc',
-      channel: '#appNotifications'
-    }
-  });
+  var logDog = require('logdog')(...config);
 ```
 
 Next time you require it, you will get the singleton instance of the first require, so you don't need to
 configure Logdog all over the place.
 
-Another place in the code:
+Another place in the code (call without any options):
 
 ```
 var logDog = require('logdog')();
