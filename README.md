@@ -78,7 +78,7 @@ If we want, we may put it on Slack too:
 
 ```
   var logDog = require('logdog')();
-  logDog('myapp.myfeature').bark("Did something of importance!");
+  logDog('myapp.myfeature').bark("Something went so wrong!");
 ```
 
 #### Simple log to std.out
