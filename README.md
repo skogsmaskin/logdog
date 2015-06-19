@@ -15,7 +15,11 @@ It's a call to actions for further debugging / log file inspection by a develope
 
 ## Usage
 
+### Install
+
 `npm install logdog`
+
+### Initialization and configuration
 
 Logdog is first initialized in your app by requiring it and passing configuration options for it:
 
@@ -34,6 +38,7 @@ var logDog = require('logdog')();
 ```
 Logdog is now configured with options from the first initial require statement.
 
+### Log something
 
 ```
   logDog('myApp.myFeature').bark('Winter is coming!');
