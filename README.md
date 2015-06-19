@@ -11,6 +11,8 @@ It's a call to actions for further debugging / log file inspection by a develope
 
 ## Usage
 
+``npm install logdog``
+
 Logdog is first initialized in your app by requiring it and passing configuration options for it:
 
 ```
