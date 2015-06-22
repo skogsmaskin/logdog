@@ -51,7 +51,7 @@ Then we call `.bark(message)` to assign the actual log message.
 If we want, we may put it on Slack too:
 
 ```
-  logDog('myApp.myFeature').bark('Winter is coming!').toSlack({notify: '@john'});
+  logDog('myApp.myFeature').bark('Winter is coming!').toSlack({notify: '@jon'});
 
 ```
 
