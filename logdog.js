@@ -54,10 +54,14 @@ module.exports = (function () {
 
       var debugWrapper = function(message) {
         debug(message);
-        return {
-          toSlack: function(slackOverrideOptions) {
-            postToSlack(message, slackOverrideOptions);
-          }
+        if (slack) {
+          return {
+            toSlack: function(slackOverrideOptions) {
+              postToSlack(message, slackOverrideOptions);
+            }
+          };
+        } else {
+          return {};
         }
       }
 
