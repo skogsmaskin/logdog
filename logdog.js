@@ -13,11 +13,7 @@ module.exports = (function () {
 
     options = options || {};
 
-    var slack = {
-      send: function() {
-        throw new Error("Logdog is not properly configured for Slack notifications. See logdog README.md");
-      }
-    };
+    var slack;
 
     if (options.slack && options.slack.url && options.slack.channel) {
       slack = slackNotify(options.slack.url);
@@ -42,13 +38,18 @@ module.exports = (function () {
             text += " > " + notify;
           }
         }
-        slack.send({
-          channel: slackOverrideOptions.channel || options.slack.channel,
-          username: slackOverrideOptions.username || options.slack.username || 'LogDog',
-          icon_emoji: slackOverrideOptions.emoji || options.slack.emoji || ':dog:', // eslint-disable-line camelcase
-          text: text,
-          link_names: 1 // eslint-disable-line camelcase
-        });
+        var channel = slackOverrideOptions.channel || (options.slack && options.slack.channel);
+        if (channel) {
+          slack.send({
+            channel: channel,
+            username: slackOverrideOptions.username || options.slack.username || 'LogDog',
+            icon_emoji: slackOverrideOptions.emoji || options.slack.emoji || ':dog:', // eslint-disable-line camelcase
+            text: text,
+            link_names: 1 // eslint-disable-line camelcase
+          });
+        } else {
+          throw new Error("Logdog is not properly configured for Slack notifications. See logdog README.md");
+        }
       }
 
       var debugWrapper = function(message) {
