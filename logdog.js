@@ -34,7 +34,7 @@ module.exports = (function () {
       var postToSlack = function(message, slackOverrideOptions) {
         slackOverrideOptions = slackOverrideOptions || {};
         var text = ('*' + prefix + '*: ' + message);
-        var notify = slackOverrideOptions.notify || options.slack.notify;
+        var notify = slackOverrideOptions.notify || (options.slack && options.slack.notify);
         if (notify) {
           if (Array.isArray(notify)) {
             text += " > " + notify.join(", ");
