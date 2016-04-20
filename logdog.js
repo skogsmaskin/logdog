@@ -19,8 +19,8 @@ module.exports = (function () {
     }
 
     return function(prefix) {
-
-      var debug = debugz((options.prefix || "logdog.") + prefix);
+      var finalPrefix = (options.prefix || "logdog.") + prefix
+      var debug = debugz(finalPrefix);
       debugz.enable(options.prefix || "logdog." + "*");
 
       if (options.bindTo === 'stdout') {
@@ -33,7 +33,7 @@ module.exports = (function () {
 
       var postToSlack = function(message, slackOverrideOptions) {
         slackOverrideOptions = slackOverrideOptions || {};
-        var text = ('*' + prefix + '*: ' + message);
+        var text = ('*' + finalPrefix + '*: ' + message);
         var notify = slackOverrideOptions.notify || (options.slack && options.slack.notify);
         if (notify) {
           if (Array.isArray(notify)) {
