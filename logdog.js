@@ -1,7 +1,6 @@
 var debugz = require("debug");
 
 debugz.disable();
-debugz.enable("logdog.*");
 
 var slackNotify = require('slack-notify');
 
@@ -21,10 +20,15 @@ module.exports = (function () {
 
     return function(prefix) {
 
-      var debug = debugz("logdog." + prefix);
+      var debug = debugz((options.prefix || "logdog.") + prefix);
+      debugz.enable(options.prefix || "logdog." + "*");
 
-      if (options.bindToStdOut) {
+      if (options.bindTo === 'stdout') {
         debug.log = console.log.bind(console);
+      }
+
+      if (options.bindTo === null) {
+        debug.log = function() {}
       }
 
       var postToSlack = function(message, slackOverrideOptions) {
@@ -61,7 +65,9 @@ module.exports = (function () {
             }
           };
         } else {
-          return {};
+          return {
+            toSlack: function() {}
+          };
         }
       }
 

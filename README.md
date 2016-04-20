@@ -58,8 +58,11 @@ If we want, we may put it on Slack too:
 
 ### Configuration options
 
-  * `bindToStdOut`
-    By default Logdog.bark goes to sdt.err. This will route messages to std.out instead.
+  * `prefix`
+    String to prefix any log messages with. Default is `logdog.`
+
+  * `bindTo`
+    By default Logdog.bark goes to sdt.err. Value `stdout` will bind it to std.out. Value `null` will disable any output (i.e. for only sending to slack).
 
   * `slack`
 

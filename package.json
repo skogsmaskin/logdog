@@ -1,6 +1,6 @@
 {
   "name": "logdog",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A tool for logging and debugging important events in your app that a developer should be able to easily be notified about and look into.",
   "main": "logdog.js",
   "scripts": {
